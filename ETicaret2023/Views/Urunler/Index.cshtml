@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ETicaret2023.Models.Urunler>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Yeni Ürün Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunAdi)
+        </th>
+        <th>
+            Resim
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunAciklamasi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunFiyati)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kategoriler.KategoriAdi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunAdi)
+        </td>
+        <td>
+            <img src="~/Resim/@(item.UrunID).jpg" width="50" />
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunAciklamasi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunFiyati)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kategoriler.KategoriAdi)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.UrunID }) 
+            @Html.ActionLink("Detaylar", "Details", new { id=item.UrunID }) 
+            @Html.ActionLink("Sil", "Delete", new { id=item.UrunID })
+        </td>
+    </tr>
+}
+
+</table>
