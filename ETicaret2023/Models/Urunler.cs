@@ -25,7 +25,7 @@ namespace ETicaret2023.Models
         public string UrunAdi { get; set; }
         public int KategoriID { get; set; }
         public string UrunAciklamasi { get; set; }
-        public Nullable<int> UrunFiyati { get; set; }
+        public int UrunFiyati { get; set; }
     
         public virtual Kategoriler Kategoriler { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

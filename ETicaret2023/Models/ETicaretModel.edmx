@@ -124,7 +124,7 @@
           <Property Name="UrunAdi" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="KategoriID" Type="int" Nullable="false" />
           <Property Name="UrunAciklamasi" Type="nvarchar(max)" />
-          <Property Name="UrunFiyati" Type="int" />
+          <Property Name="UrunFiyati" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
@@ -439,7 +439,7 @@
           <Property Name="UrunAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="KategoriID" Type="Int32" Nullable="false" />
           <Property Name="UrunAciklamasi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="UrunFiyati" Type="Int32" />
+          <Property Name="UrunFiyati" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Kategoriler" Relationship="Self.FK_Urunler_Kategoriler" FromRole="Urunler" ToRole="Kategoriler" />
           <NavigationProperty Name="Sepet" Relationship="Self.FK_Sepet_Urunler" FromRole="Urunler" ToRole="Sepet" />
           <NavigationProperty Name="SiparisDetaylar" Relationship="Self.FK_SiparisDetaylar_Urunler" FromRole="Urunler" ToRole="SiparisDetaylar" />

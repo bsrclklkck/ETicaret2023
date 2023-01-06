@@ -14,7 +14,7 @@ namespace ETicaret2023.Controllers
     {
         private ETicaretEntities db = new ETicaretEntities();
 
-      
+    
         public ActionResult Index()
         {
             return View(db.Kategoriler.ToList());

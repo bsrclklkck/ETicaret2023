@@ -15,7 +15,6 @@ namespace ETicaret2023.Controllers
     {
         private ETicaretEntities db = new ETicaretEntities();
 
-        // GET: Urunler
         public ActionResult Index()
         {
             var urunler = db.Urunler.Include(u => u.Kategoriler);
@@ -103,6 +102,7 @@ namespace ETicaret2023.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.KategoriID = new SelectList(db.Kategoriler, "KategoriID", "KategoriAdi", urunler.KategoriID);
+
             return View(urunler);
         }
 

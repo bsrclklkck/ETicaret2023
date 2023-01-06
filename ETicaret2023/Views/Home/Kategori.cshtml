@@ -1,5 +1,7 @@
 ﻿@using ETicaret2023.Models;
-@{
+@model List<Urunler>
+@{ 
+    Kategoriler kat = (Kategoriler)ViewBag.kategori;
     ViewBag.Title = "Ana Sayfa";
 }
 
@@ -16,7 +18,7 @@
             @foreach (Kategoriler item in (List<Kategoriler>)ViewBag.Kategoriler)
             {
                 <li>
-                    @Html.ActionLink(item.KategoriAdi,"Kategori",new {id=item.KategoriID})
+                    @Html.ActionLink(item.KategoriAdi, "Kategori", new { id = item.KategoriID })
 
                 </li>
             }
@@ -27,11 +29,11 @@
     <div class="col-md-8">
         <h2>Ürünler</h2>
         <div class="row">
-            @foreach(Urunler item in (List<Urunler>)ViewBag.Urunler)
+            @foreach (Urunler item in Model)
             {
                 <div class="col-md-4" style="border:1px solid">
                     <h5>@item.UrunAdi</h5>
-                    <img src="/Resim/@(item.UrunID+".jpg")" style="width:50%;"/>
+                    <img src="/Resim/@(item.UrunID+".jpg")" style="width:50%;" />
                     <p>
                         <a href="/Home/Urun/@item.UrunID" class="btn btn-default">
                             Ürün Detay &raquo;
@@ -39,13 +41,9 @@
                         <span style="float:right;color:red;font-size:15px;font-weight:bold">@item.UrunFiyati TL </span>
                     </p>
                 </div>
-                <div class="col-md-2">
-
-                </div>
             }
-
         </div>
-      
+
     </div>
-    
+
 </div>
